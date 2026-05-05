@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Wavefront iframe test</title>
+    <style>
+      body {
+        margin: 0;
+        background: #0b1020;
+        padding: 24px;
+        font-family: system-ui, sans-serif;
+        color: #fff;
+      }
+      iframe {
+        width: 1024px;
+        height: 720px;
+        border: 1px solid #2a2f4a;
+        border-radius: 14px;
+        display: block;
+      }
+      .row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 16px;
+        align-items: flex-start;
+      }
+    </style>
+  </head>
+  <body>
+    <h2 style="margin: 0 0 16px">Iframe embed check</h2>
+    <p style="opacity: 0.8; max-width: 720px">
+      Point <code>src</code> at your dev server (<code>http://localhost:5173</code>) or deployed URL. Allow autoplay
+      after a user gesture inside the iframe.
+    </p>
+    <div class="row" style="margin-top: 24px">
+      <div>
+        <p style="margin: 0 0 8px; font-size: 13px">1024×720</p>
+        <iframe src="http://localhost:5173" title="Wavefront app" allow="autoplay; clipboard-write"></iframe>
+      </div>
+      <div>
+        <p style="margin: 0 0 8px; font-size: 13px">800px wide</p>
+        <iframe
+          src="http://localhost:5173"
+          title="Wavefront app 800"
+          style="width: 800px; height: 720px"
+          allow="autoplay; clipboard-write"
+        ></iframe>
+      </div>
+      <div>
+        <p style="margin: 0 0 8px; font-size: 13px">1200px wide</p>
+        <iframe
+          src="http://localhost:5173"
+          title="Wavefront app 1200"
+          style="width: 1200px; height: 720px"
+          allow="autoplay; clipboard-write"
+        ></iframe>
+      </div>
+    </div>
+  </body>
+</html>
