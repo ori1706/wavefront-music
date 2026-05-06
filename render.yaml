@@ -1,9 +1,10 @@
 services:
   - type: web
     name: wavefront-api
-    env: node
-    buildCommand: npm install && npx prisma generate && npm run build
-    startCommand: npx prisma db push && node dist/index.js
+    runtime: docker
+    dockerfilePath: ./backend/Dockerfile
+    dockerContext: ./backend
+    plan: free
     envVars:
       - key: DATABASE_URL
         sync: false
