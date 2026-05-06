@@ -99,13 +99,19 @@ After `npx prisma db seed` you get **32 tracks**, **14 albums**, **8 artists**, 
 
 ### Frontend (Vercel)
 
-From `frontend/`:
+**Production (current):** [https://wavefront-showcase.vercel.app](https://wavefront-showcase.vercel.app) — Vercel project **`wavefront-showcase`**, API base **`VITE_API_URL=https://wavefront-api.onrender.com`**.
+
+**CLI (from `frontend/`):**
 
 ```bash
+cd frontend
+vercel login   # once per machine, if needed
+vercel link --yes --project wavefront-showcase   # links this folder to the right project (avoid reusing another app’s .vercel link)
+vercel env add VITE_API_URL production --value "https://wavefront-api.onrender.com" --yes --no-sensitive
 npx vercel --prod --yes
 ```
 
-Set build environment variable **`VITE_API_URL`** to your public API origin (e.g. `https://wavefront-api.onrender.com`), **without** trailing slash. If interactive login is required, run `vercel login` locally first.
+**Git-connected project:** import this repo in the Vercel dashboard → **Root Directory** `frontend` → Framework **Vite**. Add **`VITE_API_URL`** under Project → Settings → Environment Variables for **Production** (same URL as above, no trailing slash). Preview builds need the variable too once Git is connected (you can scope it to branch `main` or “All Preview branches”).
 
 ### Backend (Render / Fly / Railway)
 
@@ -123,7 +129,7 @@ Create a project → **Settings → Database** → copy connection string → `D
 
 ```html
 <iframe
-  src="https://YOUR-VERCEL-URL"
+  src="https://wavefront-showcase.vercel.app"
   width="100%"
   height="720"
   style="border:0;border-radius:16px"
