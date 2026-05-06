@@ -106,7 +106,7 @@ After `npx prisma db seed` you get **32 tracks**, **14 albums**, **8 artists**, 
 ```bash
 cd frontend
 vercel login   # once per machine, if needed
-vercel link --yes --project wavefront-showcase   # links this folder to the right project (avoid reusing another app’s .vercel link)
+vercel link --yes --project wavefront-showcase   # never use `--project slackord` — that Vercel project is **Riff / Showcase-Chat**, not Wavefront
 vercel env add VITE_API_URL production --value "https://wavefront-api.onrender.com" --yes --no-sensitive
 npx vercel --prod --yes
 ```
