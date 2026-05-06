@@ -99,7 +99,7 @@ After `npx prisma db seed` you get **32 tracks**, **14 albums**, **8 artists**, 
 
 ### Frontend (Vercel)
 
-**Production (current):** [https://wavefront-showcase.vercel.app](https://wavefront-showcase.vercel.app) — Vercel project **`wavefront-showcase`**, API base **`VITE_API_URL=https://wavefront-api.onrender.com`**.
+**Production (current):** [https://wavefront-showcase.vercel.app](https://wavefront-showcase.vercel.app) — Vercel project **`wavefront-showcase`**, API base **`VITE_API_URL=https://wavefront-api.onrender.com`**. The Living Résumé portfolio embeds this URL under **Projects → Wavefront · Streaming UI** (optional override there via `VITE_WAVEFRONT_URL`).
 
 **CLI (from `frontend/`):**
 
