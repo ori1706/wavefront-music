@@ -1,6 +1,6 @@
 # Wavefront
 
-**Wavefront** is a Spotify-inspired, full-stack music streaming web app: persistent player, library, playlists with drag-and-drop, search, likes, queue, and server-backed history—built to embed cleanly in an iframe on a portfolio site.
+**Wavefront** is a Spotify-inspired, full-stack music streaming web app: persistent player, library, playlists with drag-and-drop, search, likes, queue, and server-backed history.
 
 ## Architecture
 
@@ -60,7 +60,7 @@
 
 ### Demo credentials
 
-The app auto-logs in as **Demo User** (`demo@wavefront.audio`) via `POST /api/auth/demo` on first load. A JWT is stored in `localStorage` (iframe-friendly, per shared spec).
+The app auto-logs in as **Demo User** (`demo@wavefront.audio`) via `POST /api/auth/demo` on first load. A JWT is stored in `localStorage` for the demo session.
 
 ### Database schema (summary)
 
@@ -99,7 +99,7 @@ After `npx prisma db seed` you get **32 tracks**, **14 albums**, **8 artists**, 
 
 ### Frontend (Vercel)
 
-**Production (current):** [https://wavefront-showcase.vercel.app](https://wavefront-showcase.vercel.app) — Vercel project **`wavefront-showcase`**, API base **`VITE_API_URL=https://wavefront-api.onrender.com`**. The Living Résumé portfolio embeds this URL under **Projects → Wavefront · Streaming UI** (optional override there via `VITE_WAVEFRONT_URL`).
+**Production (current):** [https://wavefront-showcase.vercel.app](https://wavefront-showcase.vercel.app) — Vercel project **`wavefront-showcase`**, API base **`VITE_API_URL=https://wavefront-api.onrender.com`**. The Living Résumé portfolio links this URL under **Projects → Wavefront · Streaming UI** (optional override there via `VITE_WAVEFRONT_URL`).
 
 **CLI (from `frontend/`):**
 
@@ -125,7 +125,7 @@ Create a project → **Settings → Database** → copy connection string → `D
 
 ---
 
-## iframe embed snippet
+## Embed snippet
 
 ```html
 <iframe
@@ -141,9 +141,9 @@ Create a project → **Settings → Database** → copy connection string → `D
 
 Parent page should **not** send `X-Frame-Options: DENY`. The API sends `Content-Security-Policy: frame-ancestors *` (see `backend/src/index.ts`); the Vercel config adds `frame-ancestors *` for the SPA.
 
-## iframe test
+## Multi-width preview (`iframe-test.html`)
 
-Open `iframe-test.html` (e.g. `npx serve .` from the repo root) and set each iframe `src` to your dev or prod URL.
+Open `iframe-test.html` (e.g. `npx serve .` from the repo root) and point each embed `src` at your dev or prod URL.
 
 ## Royalty / licensing
 
